@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Oropharyngeal — Target Volume Delineation </title>
+  <style>
+    :root{
+      --accent:#2b6cb0;
+      --muted:#555;
+      --card:#fff;
+      --glass: rgba(255,255,255,0.85);
+      --maxw:980px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+      color:#222;
+      background: linear-gradient(180deg,#f8fafc 0%, #ffffff 100%);
+      -webkit-font-smoothing:antialiased;
+    }
+    header{
+      background: linear-gradient(90deg,var(--accent), #4c9bd6);
+      color:white;
+      padding:24px 18px;
+      box-shadow: 0 6px 18px rgba(35,60,100,0.08);
+    }
+    .container{max-width:var(--maxw);margin:20px auto;padding:0 18px}
+    h1{margin:0;font-size:1.35rem}
+    .subtitle{opacity:0.95;margin-top:8px;font-size:0.95rem}
+
+    /* cards / accordion */
+    .accordion{display:flex;flex-direction:column;gap:14px;margin-top:18px}
+    .panel{
+      background:var(--card);
+      border-radius:12px;
+      padding:14px;
+      border:1px solid rgba(10,20,40,0.04);
+      box-shadow: 0 8px 20px rgba(15,25,45,0.03);
+    }
+    .panel summary{
+      list-style:none;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      gap:12px;
+      padding:10px 12px;
+      border-radius:8px;
+      font-weight:700;
+      color:var(--accent);
+      background: linear-gradient(90deg, rgba(43,108,176,0.06), rgba(76,155,214,0.03));
+      border:1px solid rgba(10,20,40,0.02);
+    }
+    details[open] summary{
+      background: linear-gradient(90deg, rgba(43,108,176,0.12), rgba(76,155,214,0.06));
+    }
+    .panel .content{margin-top:10px;color:var(--muted);line-height:1.45}
+    ul{margin:10px 0 0 18px}
+    li{margin:6px 0}
+
+    /* tables & tabs for suggested volumes */
+    .tabs{display:flex;gap:8px;margin-top:12px}
+    .tab-btn{
+      padding:8px 12px;border-radius:8px;border:1px solid rgba(10,20,40,0.05);
+      background:white;cursor:pointer;font-weight:600;color:var(--accent);
+    }
+    .tab-btn.active{background:linear-gradient(90deg,var(--accent),#4c9bd6);color:white;border-color:transparent}
+    .table-wrap{margin-top:12px;overflow:auto;border-radius:8px;border:1px solid rgba(10,20,40,0.04);background:linear-gradient(180deg,#fff,#fbfdff)}
+    table{width:100%;border-collapse:collapse;font-size:0.95rem}
+    th,td{padding:10px 12px;border-bottom:1px solid rgba(10,20,40,0.04);vertical-align:top}
+    th{background:rgba(10,20,40,0.03);text-align:left;font-weight:700}
+    .muted-note{font-size:0.9rem;color:#444;margin-top:8px}
+
+    /* actions */
+    .actions{display:flex;gap:8px;margin-top:12px}
+    button{padding:8px 12px;border-radius:8px;border:none;background:var(--accent);color:white;cursor:pointer}
+    button.ghost{background:transparent;border:1px solid rgba(10,20,40,0.06);color:var(--accent)}
+    textarea.copybox{width:100%;min-height:90px;padding:10px;border-radius:8px;border:1px solid #eee;margin-top:10px;resize:vertical}
+
+    footer{margin:24px 0 60px;color:#666;font-size:0.9rem}
+    @media (max-width:720px){
+      header{padding:18px}
+      h1{font-size:1.05rem}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Target Volume Delineation — Oropharyngeal Carcinoma </h1>
+      <div class="subtitle">Sections: Introduction • Anatomy & patterns • Diagnostic workup • Simulation & localization • Target volume delineation</div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="accordion">
+
+      <!-- 0) Introduction -->
+      <details class="panel" open>
+        <summary> Introduction</summary>
+        <div class="content">
+          <p><strong>Oropharyngeal carcinoma</strong> comprises primary tumors involving the tonsils, base of tongue, soft palate, or posterior pharyngeal wall. The vast majority are squamous cell carcinomas, most of which are associated with human papillomavirus (HPV). HPV-unrelated cancers are commonly associated with tobacco or alcohol use. HPV-associated head and neck cancers have superior prognosis. Given the prognostic importance of HPV status, viral testing should be performed in all oropharyngeal carcinoma patients. De-escalation of therapy based on HPV status should not be performed outside of a clinical trial.</p>
+
+          <p class="muted-note"><em>Reference style note:</em> Text and organization follow the practical guidance style used in target delineation references (e.g., Target Volume Delineation and Field Setup).</p>
+        </div>
+      </details>
+
+      <!-- 1) General Principles -->
+      <details class="panel">
+        <summary> General Principles of Anatomy and Patterns of Spread</summary>
+        <div class="content">
+          <ul>
+            <li>The oropharynx is a cuboidal space bordered by the oral cavity anteriorly, the nasopharynx superiorly, and the larynx and hypopharynx inferiorly.</li>
+            <li>It consists of four subsites: the tonsils, base of tongue, soft palate, and the pharyngeal wall, with the majority of cases arising in the tonsils and tongue base.</li>
+            <li>The oropharynx has a rich lymphatic drainage and lymph nodes are commonly involved.</li>
+          </ul>
+
+          <p class="muted-note">Understanding the anatomic subsites and lymphatic drainage is essential for accurate clinical target volume (CTV) selection and elective nodal coverage.</p>
+        </div>
+      </details>
+
+      <!-- 2) Diagnostic Workup -->
+      <details class="panel">
+        <summary> Diagnostic Workup Relevant for Target Delineation</summary>
+        <div class="content">
+          <ul>
+            <li>Gross tumor volume delineation of the primary site is best identified by a combination of imaging and physical examination.</li>
+            <li>The mucosal and superficial extents of disease are best accessed by visual inspection, palpation, and fiberoptic endoscopic examination. Photographic documentation at consult or simulation is helpful to document mucosal extension not well seen on imaging.</li>
+            <li>While contrast-enhanced CT scans remain the mainstay, both MRI and PET/CT have well-defined roles:
+              <ul>
+                <li>T1-weighted pre-contrast MRI sequences are ideal for evaluation of fat planes and bone marrow signals.</li>
+                <li>T1-weighted contrast-enhanced MRI sequences may be critical for delineation of anterior extension of base of tongue tumors and perineural invasion.</li>
+                <li>T2-weighted fat-saturated sequences help evaluate RP nodes and soft tissue extent in parapharyngeal and pre-epiglottic spaces.</li>
+                <li>FDG-PET provides metabolic information that complements CT and MRI and may identify tumor extent missed by CT/MRI; limitations include poor spatial resolution and low sensitivity for small nodal metastases, so absent FDG uptake in a suspicious node is not necessarily reassuring.</li>
+              </ul>
+            </li>
+          </ul>
+
+          <div class="actions">
+          </div>  
+        </div>
+      </details>
+
+      <!-- 3) Simulation & Daily Localization -->
+      <details class="panel">
+        <summary>Simulation and Daily Localization</summary>
+        <div class="content">
+          <ul>
+            <li>Position: Patient supine with headrest and neck extended. Use a customized immobilization device (eg 5-point Aquaplast mask) for head, neck, and shoulder immobilization. Bite-block or mouth guard may be inserted. Instruct patients not to swallow during scans or during treatment when feasible.</li>
+            <li>CT simulation with IV contrast using ≤3 mm slice thickness encompassing entire vertex of skull down through carina.</li>
+            <li>Isocenter is typically placed at the arytenoid cartilages. A low anterior conventional AP neck field can be matched to IMRT fields if needed.</li>
+            <li>MRI and PET images may be registered/fused to the CT simulation scan. Use of immobilization mask during PET improves fusion accuracy; mask during MRI may preclude dedicated head/neck coil.</li>  
+          </ul>
+
+          <div class="actions">
+          </div>
+        </div>
+      </details>
+
+      <!-- 4) Target Volume Delineation and Treatment Planning -->
+      <details class="panel">
+        <summary>Target Volume Delineation and Treatment Planning</summary>
+        <div class="content">
+          <p><strong>Selected IMRT dose & fractionation schemes</strong></p>
+
+          <ul>
+            <li>Many approaches exist. A preferred sequential technique: total dose to gross disease = 70 Gy.</li>
+            <li>For HPV-related tumors: subclinical regions often receive 30 Gy in 2 Gy per fraction followed by cone down to gross disease receiving 40 Gy in 2 Gy per fraction (total 70 Gy). Subclinical region scrutinized heavily to ensure no gross disease with MRI/CT with contrast and PET/CT.</li>
+            <li>For HPV-unrelated disease: initial phase often 60 Gy in 2 Gy fractions to gross disease while simultaneously treating 54 Gy in 1.8 Gy per fraction to all subclinical regions, followed by cone down of 10 Gy in 2 Gy fractions to gross disease (to total 70 Gy).</li>
+            <li>Simultaneous integrated boost (SIB) is another approach: gross disease 70 Gy (2 Gy/fx), high-risk subclinical dose 56 Gy (1.6 Gy/fx), low-risk subclinical dose 50–52.5 Gy (1.43–1.5 Gy/fx). SIB should be considered with concurrent chemotherapy.</li>
+          </ul>
+
+          <p class="muted-note">Other fractionation schemes include RTOG protocols (eg RTOG 0022, RTOG 1016) — decisions guided by concurrent systemic therapy and clinical scenario.</p>
+
+          <!-- TABS for Suggested Target Volumes (Tables 2.1 & 2.2) -->
+          <div style="margin-top:12px">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+              <strong>Suggested target volumes</strong>
+              <div class="actions" style="margin:0">
+              </div>
+            </div>
+
+            <div class="tabs" role="tablist" aria-label="Suggested target volumes tabs">
+              <button class="tab-btn active" data-tab="table-gross">Table 1 — gross disease</button>
+              <button class="tab-btn" data-tab="table-subclinical">Table 2 — subclinical disease</button>
+            </div>
+
+            <div class="table-wrap" id="table-gross" style="display:block">
+              <table>
+                <thead>
+                  <tr><th style="width:26%">Target volumes</th><th>Definition and description</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>GTV<sub>70</sub></strong></td>
+                    <td>Primary: all gross disease as defined by clinical exam and imaging. Nodes: all suspicious (>1 cm, necrotic, enhancing, or FDG-avid) lymph nodes. Borderline suspicious nodes can be given less than 70 Gy (eg 60–66 Gy) for example.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>CTV<sub>70</sub></strong></td>
+                    <td>In areas of excellent visualization GTV<sub>70</sub> can equal CTV<sub>70</sub> (no added margin). Where there is uncertainty of tumor extent CTV<sub>70</sub> = GTV<sub>70</sub> + 3–5 mm.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>PTV<sub>70</sub></strong></td>
+                    <td>CTV<sub>70</sub> + 3–5 mm depending on daily setup accuracy and availability of image guidance.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="table-wrap" id="table-subclinical" style="display:none">
+              <table>
+                <thead>
+                  <tr><th style="width:30%">Target volumes</th><th>Definition and description</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>General guidelines</strong></td>
+                    <td>As a useful guideline, the primary site CTV<sub>subclinical</sub> should encompass the GTV<sub>70</sub> + 1 cm (shaved off anatomic barriers to spread such as air, bone and skin).</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Tonsil primary, CTV<sub>subclinical</sub></strong></td>
+                    <td>Ensure adequate margin to the primary tumor (~1 cm). Highly recommend inclusion of pterygoid plates with advanced primary disease. Consider inclusion of ipsilateral retromolar trigone if tumor spread anterolaterally along pharyngeal constrictor suspected.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Base of tongue primary, CTV<sub>subclinical</sub></strong></td>
+                    <td>Include glossotonsillar sulcus, vallecula, and pre-epiglottic space. Ensure a mucosal margin ≥1.0 cm around base of tongue primary; anteriorly may extend into oral tongue. MRI is helpful for anterior extension delineation.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Soft palate primary, CTV<sub>subclinical</sub></strong></td>
+                    <td>Entire soft palate, superior aspect of tonsillar pillars + fossa, adjacent nasopharynx superiorly to pterygoid plate. For advanced primaries consider pterygopalatine fossa; if involved, assess skull base with MRI. Ensure adequate anterior coverage if hard palate involved.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Pharyngeal wall primary, CTV<sub>subclinical</sub></strong></td>
+                    <td>Generous superior and inferior margins given skip lesions; with advanced primary tumors consider extending CTV cranially to include nasopharynx and caudally to include hypopharynx.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Elective neck nodes, CTV<sub>subclinical</sub></strong></td>
+                    <td>
+                      The nodal regions can be treated to microscopic doses of ~54 Gy (1.8 Gy fractions), 54.12 Gy in 1.64 Gy fractions, 56 Gy in 1.6 Gy fractions, or 59.4 Gy in 1.8 Gy fractions depending on risk. In node-negative cases at risk areas include bilateral levels II–IV and lateral retropharyngeal nodes. Adjustments are made by institutional practice and imaging findings.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="muted-note" style="margin-top:10px">Use the tables as guidance only; CTV/PTV margins should be adapted to imaging clarity, surgical changes, and image guidance availability.</div>
+          </div>
+        </div>
+      </details>
+
+    </div>
+
+  </main>
+
+  <script>
+    // --- utility functions (fixes ReferenceError) -----------------
+    function copyTextBlock(id){
+      try{
+        const el = document.getElementById(id);
+        if(el && (el.tagName === 'TEXTAREA' || el.tagName === 'INPUT')){
+          el.select();
+          el.setSelectionRange(0, 99999);
+          navigator.clipboard && navigator.clipboard.writeText(el.value).then(()=>{
+            alert('Copied to clipboard');
+          }).catch(()=>{ alert('Copy failed — please copy manually'); });
+          return;
+        }
+        // fallback text node (tvnote)
+        const fallback = document.getElementById('tvnote');
+        if(fallback){
+          navigator.clipboard && navigator.clipboard.writeText(fallback.value).then(()=>alert('Copied quick note'), ()=>alert('Copy failed'));
+          return;
+        }
+        // ultimate fallback: copy a short string
+        const simple = 'Suggested target volume guidance: GTV70 = all gross disease; CTV70 = GTV70 or +3–5 mm; PTV70 = CTV70 + 3–5 mm; Subclinical CTV ~ GTV70 + 1 cm.';
+        navigator.clipboard && navigator.clipboard.writeText(simple).then(()=>alert('Copied quick note'), ()=>alert('Copy failed'));
+      }catch(err){
+        console.error('copyTextBlock error', err);
+        alert('Copy failed');
+      }
+    }
+
+    function copyText(id){
+      return copyTextBlock(id);
+    }
+
+    function toggleExample(){
+      const msg = 'Short checklist:\n• Immobilize with 5-point mask\n• CT sim with IV contrast ≤3 mm\n• Fuse MRI/PET to CT when available\n• Daily IGRT (kV/Conebeam CT) recommended';
+      alert(msg);
+    }
+
+    // create a hidden fallback textarea used by copyTextBlock
+    (function createFallback(){
+      if(!document.getElementById('tvnote')){
+        const ta = document.createElement('textarea');
+        ta.id = 'tvnote';
+        ta.style.position = 'fixed';
+        ta.style.left = '-9999px';
+        ta.value = 'Suggested target volume guidance: GTV70 = all gross disease; CTV70 = GTV70 or +3–5 mm; PTV70 = CTV70 + 3–5 mm; Subclinical CTV ~ GTV70 + 1 cm.';
+        document.body.appendChild(ta);
+      }
+    })();
+
+    // tab switching for suggested target volumes
+    document.querySelectorAll('.tab-btn').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        const target = btn.getAttribute('data-tab');
+        document.querySelectorAll('#table-gross, #table-subclinical').forEach(el=>el.style.display='none');
+        const t = document.getElementById(target);
+        if(t) t.style.display = 'block';
+      });
+    });
+
+    // good UX: collapse other details when opening one
+    document.querySelectorAll('details').forEach(d=>{
+      d.addEventListener('toggle', (e)=>{
+        if(d.open){
+          document.querySelectorAll('details').forEach(other=>{
+            if(other !== d) other.open = false;
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
